@@ -9,31 +9,6 @@ package model;
 
 public class Aircraft {
 
-    public static class Coordinates {
-        private static int longitude;
-        private static int latitude;
-        private static int height;
-
-        public Coordinates(int longitude, int latitude, int height) {
-            Coordinates.longitude = longitude;
-            Coordinates.latitude = latitude;
-            Coordinates.height = height;
-            System.out.println(Coordinates.longitude + " " + Coordinates.latitude + " " + Coordinates.height);
-        }
-
-        public int getLongitude() {
-            return longitude;
-        }
-
-        public int getLatitude() {
-            return latitude;
-        }
-
-        public int getHeight() {
-            return height;
-        }
-    }
-
     protected long id;
     protected String name;
     protected Coordinates coordinates;

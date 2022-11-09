@@ -1,6 +1,7 @@
 package main;
 
 import model.Aircraft;
+import model.Coordinates;
 
 /**
  * - генерация погоды (4 типа)
@@ -10,7 +11,7 @@ import model.Aircraft;
 
 public class WeatherTower extends Tower {
 
-    public String getWeather(Aircraft.Coordinates coordinates) {
+    public String getWeather(Coordinates coordinates) {
         return WeatherProvider.getProvider().getCurrentWeather(coordinates);
     }
 

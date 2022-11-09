@@ -1,9 +1,9 @@
 package main;
 
-import model.Aircraft;
+import model.Coordinates;
 
 public class WeatherProvider {
-    private static String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
+    private static final String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
     private static WeatherProvider weatherProvided = new WeatherProvider();
 
     private WeatherProvider() {}
@@ -12,8 +12,8 @@ public class WeatherProvider {
         return WeatherProvider.weatherProvided;
     }
 
-    public String getCurrentWeather(Aircraft.Coordinates coordinates) {
+    public String getCurrentWeather(Coordinates coordinates) {
         int values = coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight();
-        return weather[values % 4];
+        return weather[Math.abs(values % 4)];
     }
 }
