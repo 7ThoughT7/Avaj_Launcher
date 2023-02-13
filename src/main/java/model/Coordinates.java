@@ -1,26 +1,29 @@
 package model;
 
 public class Coordinates {
-    private int longitude;
-    private int latitude;
+    private final int longitude;
+    private final int latitude;
     private int height;
 
-    public Coordinates(int longitude, int latitude, int height) {
-        this.longitude = longitude;
-        this.latitude = latitude;
+        public Coordinates(int longitude, int latitude, int height) {
+            this.longitude = longitude;
+            this.latitude = latitude;
+            this.height = height;
+        }
+
+    public void setHeight(int height) {
         this.height = height;
-        System.out.println(this.longitude + " " + this.latitude + " " + this.height);
     }
 
     public int getLongitude() {
-        return longitude;
-    }
+            return longitude;
+        }
 
-    public int getLatitude() {
-        return latitude;
-    }
+        public int getLatitude() {
+            return latitude;
+        }
 
-    public int getHeight() {
-        return height;
-    }
+        public int getHeight() {
+            return height;
+        }
 }

@@ -2,8 +2,10 @@ package main;
 
 import model.Coordinates;
 
+import java.util.Random;
+
 public class WeatherProvider {
-    private static final String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
+    private static String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
     private static WeatherProvider weatherProvided = new WeatherProvider();
 
     private WeatherProvider() {}
@@ -13,7 +15,8 @@ public class WeatherProvider {
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
+        Random random = new Random();
         int values = coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight();
-        return weather[Math.abs(values % 4)];
+        return weather[random.nextInt(3)];
     }
 }

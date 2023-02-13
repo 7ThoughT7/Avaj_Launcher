@@ -8,13 +8,13 @@ public class AircraftFactory {
         String HELICOPTER = "Helicopter";
         String JETPLANE = "JetPlane";
         String BALOON = "Baloon";
-//        Coordinates coordinates = new Coordinates(longitude, latitude, height);
+        Coordinates coordinates = new Coordinates(longitude, latitude, height);
         if (type.equals(HELICOPTER)) {
-            return new Helicopter(name, new Coordinates(longitude, latitude, height));
+            return new Helicopter(name, coordinates);
         } else if (type.equals(JETPLANE)) {
-            return new JetPlane(name, new Coordinates(longitude, latitude, height));
+            return new JetPlane(name, coordinates);
         } else if (type.equals(BALOON)) {
-            return new Baloon(name, new Coordinates(longitude, latitude, height));
+            return new Baloon(name, coordinates);
         }
         return null;
     }
